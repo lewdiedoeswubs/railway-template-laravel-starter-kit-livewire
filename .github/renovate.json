@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": [
+    "dockerfile"
+  ],
+  "extends": [
+    "config:recommended",
+    "docker:pinDigests"
+  ],
+  "packageRules": [
+    {
+      "automerge": true,
+      "matchDatasources": [
+        "docker"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "serversideup/php"
+      ],
+      "versioning": "regex:^(?<compatibility>\\d+\\.\\d+-(?:frankenphp|cli))-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
+    }
+  ],
+  "platformAutomerge": false
+}
